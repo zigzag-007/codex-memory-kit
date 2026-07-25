@@ -1,0 +1,7 @@
+# Rename this file to .gitignore in your own project if you use the
+# nested layout and want your real project memory kept out of git.
+# Do not add this as .gitignore inside the kit repo itself, since the
+# kit's own example files are meant to be tracked and shared.
+
+.agents/
+

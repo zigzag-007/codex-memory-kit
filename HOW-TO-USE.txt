@@ -1,0 +1,221 @@
+================================================================================
+                         AGENTS.md Project Starter Kit
+                    Generic Setup Guide | Codex Memory System
+================================================================================
+
+SOURCE: AGENTS.md Starter Kit + Codex Workflow
+Last Verified: 25/07/2026 19:39:00
+
+--------------------------------------------------------------------------------
+IF AN AI AGENT IS READING THIS TO INITIALIZE A REPO, START HERE
+--------------------------------------------------------------------------------
+
+  You have been handed this file directly and asked to set up this repo for
+  agentic use with the nested .agents layout, keeping the memory system out
+  of git. Do these steps in order.
+
+  1. Copy AGENTS.md and the entire .agents folder from this kit into the
+     project, so the path becomes .agents/AGENTS.md and
+     .agents/agent-memory/*.md at the project root level.
+
+  2. Check whether ~/.codex/AGENTS.md already has a "Project Memory
+     Discovery" section, the kind that tells you to look for a .agents
+     folder automatically. If it does not, tell the user, do not silently
+     skip this. Without it, you will not find this memory system again in
+     a future session unless the user reminds you. See
+     global-codex-home-agents-md/README.txt for the exact fix, it is a
+     one time setup on the user's own machine, nothing added to this repo.
+
+  3. Inspect the repo: README, package files, CI config, git history,
+     main source folders. Use what you find to replace the bracketed
+     placeholders in .agents/AGENTS.md and to write a real
+     .agents/agent-memory/codebase.md instead of the placeholder text.
+
+  4. Leave .agents/agent-memory/workflow.md and project-preferences.md
+     mostly as is for now, they fill in naturally from real corrections
+     over time, do not invent content for them.
+
+  5. Delete any bracketed optional section you find that clearly does not
+     apply to this repo, for example a security review section on a repo
+     with no security process.
+
+  6. Report back in plain words what you set up, what you inferred about
+     the project, whether the global discovery file is in place, and what
+     still needs the user to fill in by hand.
+
+  After this, continue normally. From the next session onward, if the
+  global discovery file is set up, you will find .agents/AGENTS.md on
+  your own. If it is not set up, the user will need to tell you to read
+  agent-memory at the start of each session.
+
+--------------------------------------------------------------------------------
+PROJECT INFO
+--------------------------------------------------------------------------------
+
+  Kit       : AGENTS.md + .agents Folder
+  Purpose   : Give Codex persistent project memory and context
+  Scope     : New or existing repositories
+  Goal      : Fast, accurate onboarding without repeated explanations
+
+--------------------------------------------------------------------------------
+REQUIREMENTS
+--------------------------------------------------------------------------------
+
+- Existing project folder (with package.json, README, or equivalent)
+- Codex (or compatible AI coding agent)
+- Basic text editor
+- Optional: Git repository already initialized
+
+--------------------------------------------------------------------------------
+CHOOSE YOUR LAYOUT FIRST
+--------------------------------------------------------------------------------
+
+  There are two ways to place this kit. Pick one before you start.
+
+  FLAT LAYOUT
+    AGENTS.md and the memory files sit right at the project root.
+    Codex finds everything on its own, no extra step needed.
+
+  NESTED LAYOUT (files live inside a .agents folder)
+    Codex only checks folders on the path between the project root and
+    the file it is working on. A .agents folder is off to the side of
+    that path, so Codex will never walk into it on its own. This layout
+    is the right choice if you never want the AGENTS.md memory system
+    tracked inside a public repo. Two ways to fix the discovery gap,
+    pick one:
+
+    OPTION A, recommended, zero footprint in the repo
+      Set up global-codex-home-agents-md/AGENTS.md once on your own
+      computer, at ~/.codex/AGENTS.md. It tells Codex to always check
+      for a .agents folder and read the memory inside it, on every
+      project, automatically. Nothing is ever added to the repo itself.
+      See the README.txt next to that file for exact setup.
+
+    OPTION B, per repo pointer file
+      Place one small AGENTS.md at the true project root, next to your
+      README or package.json, whose only job is to tell Codex to go
+      read .agents/AGENTS.md and the .agents/agent-memory files. This
+      file does get tracked in the repo unless you gitignore it, so use
+      Option A instead if that is a problem for you.
+      The ready made pointer file is included in this kit, see
+      nested-layout-pointer/AGENTS.md.
+
+--------------------------------------------------------------------------------
+STEPS
+--------------------------------------------------------------------------------
+
+1. COPY THE KIT
+   Unzip the starter kit. Copy AGENTS.md and the entire .agents folder into the
+   root of your new project folder (same level as package.json or README).
+
+   1a. If you are using the nested layout, also copy
+       nested-layout-pointer/AGENTS.md to the true project root now, and
+       rename it to AGENTS.md there. Skip this if you are using the flat
+       layout, since your main AGENTS.md already lives at the root.
+
+2. FILL IN BASIC PROJECT INFO
+   Open AGENTS.md and replace the bracketed placeholders under Project:
+   - Repo path
+   - Remote URL
+   - What the project is
+   - Tech stack
+   - How to run it locally
+   This takes about two minutes and prevents Codex from guessing.
+
+3. LET CODEX FILL IN THE REST (OR DO IT YOURSELF)
+   Open Codex in the project and say:
+   "Read AGENTS.md, then inspect the repo and fill in codebase.md."
+   Codex will read your README, package files, and main folders, then write a
+   real architecture summary instead of placeholder text.
+
+4. LEAVE WORKFLOW AND PREFERENCES ALONE AT FIRST
+   workflow.md and project-preferences.md fill themselves naturally as you work.
+   Every time you correct Codex (commit style, preferred fixes, etc.), add a
+   short note to the relevant file.
+
+5. DELETE SECTIONS YOU DO NOT NEED
+   Bracketed optional sections (security review, subagents, etc.) can be removed
+   if they do not apply. Keep the file short and useful.
+
+6. WORK NORMALLY
+   Continue your usual exchange with Codex. The memory files sit quietly
+   and supply context at the start of every session.
+
+7. UPDATE MEMORY ONLY AFTER APPROVED COMMITS
+   Once you approve a commit that changes something durable (architecture
+   decision, new rule, etc.), ask Codex to update the relevant memory file.
+   Do not update after every small edit, that creates clutter.
+
+8. ADD A TOPIC FILE WHEN NEEDED
+   If one area repeatedly needs deep notes, create a new file in
+   .agents/agent-memory named after that topic and add it to the Read Order
+   list in AGENTS.md.
+
+--------------------------------------------------------------------------------
+FILES IN THIS KIT
+--------------------------------------------------------------------------------
+
+  AGENTS.md                          Root memory file, flat layout
+  .agents/agent-memory/workflow.md            Git, commit, push, review rules
+  .agents/agent-memory/project-preferences.md How the user likes to work
+  .agents/agent-memory/codebase.md            Architecture and key files
+  .agents/agent-memory/release-history.md     Releases, tags, history notes
+  .agents/agent-memory/task.md                Small active checklist
+  nested-layout-pointer/AGENTS.md    Root pointer file, nested layout, option B
+  global-codex-home-agents-md/       Global file for ~/.codex/AGENTS.md,
+                                      nested layout, option A, recommended,
+                                      zero footprint in any repo. See the
+                                      README.txt inside for setup.
+  example-batch-powershell-conversion/
+                                      A worked example showing how a Cursor
+                                      rule with glob scoping becomes a
+                                      nested Codex AGENTS.md file. Read
+                                      HOW_THIS_WAS_CONVERTED.md inside it
+                                      for the general method, not just the
+                                      batch and PowerShell specifics.
+
+--------------------------------------------------------------------------------
+NOTES
+--------------------------------------------------------------------------------
+- Keep AGENTS.md and the .agents folder under version control.
+- Only update memory files after deliberate, approved changes.
+- Optional sections should be deleted rather than left as placeholders.
+- A clean, short AGENTS.md is more effective than a long, outdated one.
+- Nested layout only: check the root pointer AGENTS.md is in place before
+  trusting Codex to have read anything inside .agents.
+--------------------------------------------------------------------------------
+
+QUESTIONS OR ISSUES?
+--------------------------------------------------------------------------------
+If something feels off, check:
+- AGENTS.md is at the true project root (flat layout), or the pointer
+  AGENTS.md is at the true project root (nested layout)
+- Bracketed placeholders have been replaced with real info
+- Codex was told to read AGENTS.md before filling codebase.md
+- Memory updates happen only after meaningful commits
+
+================================================================================
+                               Enjoy! 🎉
+================================================================================
+
+
+    ████████╗██╗  ██╗ █████╗ ███╗   ██╗██╗  ██╗    ██╗    ██╗ ██████╗ ██╗   ██╗       ██╗ 
+    ╚══██╔══╝██║  ██║██╔══██╗████╗  ██║██║ ██╔╝    ╚██╗ ██╔╝██╔═══██╗██║   ██║    ██╗╚██╗
+       ██║   ███████║███████║██╔██╗ ██║█████╔╝      ╚████╔╝ ██║   ██║██║   ██║    ╚═╝ ██║
+       ██║   ██╔══██║██╔══██║██║╚██╗██║██╔═██╗       ╚██╔╝  ██║   ██║██║   ██║    ██╗ ██║
+       ██║   ██║  ██║██║  ██║██║ ╚████║██║  ██╗       ██║   ╚██████╔╝╚██████╔╝    ╚═╝██╔╝
+       ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝       ╚═╝    ╚═════╝  ╚═════╝       ╚═╝ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+𝚋𝚢 𝙱𝚕𝚊𝚌𝚔 𝙷𝚊𝚝
